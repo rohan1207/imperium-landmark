@@ -54,7 +54,7 @@ export default function HomeHero() {
       />
 
       {/* Phone: logo top-left, CTAs bottom-center */}
-      <div className="relative z-[1] flex min-h-[100svh] flex-col justify-between px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-[calc(4.25rem+1.25rem)] sm:px-6 sm:pt-[calc(5rem+1.5rem)] md:hidden">
+      <div className="relative z-[1] flex min-h-[100svh] flex-col justify-between px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-[calc(4.75rem+1.25rem)] sm:px-6 sm:pt-[calc(5.5rem+1.5rem)] md:hidden">
         <div className="w-[min(58vw,13.5rem)] max-w-[13.5rem]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -71,7 +71,7 @@ export default function HomeHero() {
       </div>
 
       {/* Desktop: logo + CTAs mid-left */}
-      <div className="relative z-[1] mx-auto hidden min-h-[100svh] max-w-[1500px] items-center px-8 pt-[calc(5rem+1rem)] md:flex lg:px-10">
+      <div className="relative z-[1] mx-auto hidden min-h-[100svh] max-w-[1500px] items-center px-8 pt-[calc(5.5rem+1rem)] md:flex lg:px-10">
         <div className="w-full max-w-[22rem] -translate-y-4 lg:max-w-[24rem] lg:-translate-y-6">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

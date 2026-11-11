@@ -63,7 +63,7 @@ export default function AboutHero() {
       <div className="grid lg:grid-cols-2">
         {/* Left — copy */}
         <div
-          className="relative flex flex-col justify-center px-5 pb-10 pt-[calc(4.25rem+1.75rem)] sm:px-8 sm:pb-20 sm:pt-[calc(5rem+3rem)] lg:px-10 lg:pb-28 lg:pt-[calc(5.5rem+3.5rem)] xl:px-14"
+          className="relative flex flex-col justify-center px-5 pb-10 pt-[calc(4.75rem+1.75rem)] sm:px-8 sm:pb-20 sm:pt-[calc(5.5rem+3rem)] lg:px-10 lg:pb-28 lg:pt-[calc(6rem+3.5rem)] xl:px-14"
           style={{ backgroundColor: GREEN }}
         >
           <div className="mx-auto w-full max-w-[36rem] lg:mx-0 lg:max-w-[34rem]">

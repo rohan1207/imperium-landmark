@@ -17,7 +17,7 @@ export default function PageHero({ eyebrow, title, body, accent }) {
 
   return (
     <section
-      className="relative overflow-hidden border-b border-[var(--imp-stone-deep)] px-5 pb-8 pt-[calc(4.25rem+1.5rem)] sm:px-8 sm:pb-14 sm:pt-[calc(5rem+2.75rem)] lg:px-10 lg:pb-16 lg:pt-[calc(5.5rem+3rem)]"
+      className="relative overflow-hidden border-b border-[var(--imp-stone-deep)] px-5 pb-8 pt-[calc(4.75rem+1.5rem)] sm:px-8 sm:pb-14 sm:pt-[calc(5.5rem+2.75rem)] lg:px-10 lg:pb-16 lg:pt-[calc(6rem+3rem)]"
       style={{ backgroundColor: CREAM }}
       aria-label={eyebrow || "Page header"}
     >

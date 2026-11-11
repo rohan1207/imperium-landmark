@@ -14,7 +14,7 @@ export default function ContactView() {
     <div style={{ backgroundColor: CREAM }}>
       {/* Map hero */}
       <section className="relative overflow-hidden" aria-label="Contact Us">
-        <div className="relative mt-[4.25rem] h-[min(42svh,320px)] min-h-[220px] sm:mt-[5rem] sm:h-[min(56svh,480px)] lg:mt-0 lg:h-dvh lg:min-h-dvh">
+        <div className="relative mt-[4.75rem] h-[min(42svh,320px)] min-h-[220px] sm:mt-[5.5rem] sm:h-[min(56svh,480px)] lg:mt-0 lg:h-dvh lg:min-h-dvh">
           <iframe
             title="Lilasons Developers office location on Google Maps"
             src={CONTACT_PAGE.mapEmbed}

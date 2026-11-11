@@ -58,34 +58,6 @@ function SocialIcon({ id }) {
   }
 }
 
-function TrustBadge({ className = "" }) {
-  return (
-    <div
-      className={`relative flex shrink-0 items-center justify-center ${className}`}
-      aria-hidden
-    >
-      <svg viewBox="0 0 96 96" className="absolute inset-0 h-full w-full">
-        <circle cx="48" cy="48" r="45.5" fill="none" stroke={GOLD} strokeWidth="1.2" />
-        <circle cx="48" cy="48" r="40" fill="none" stroke={GOLD} strokeWidth="0.7" opacity="0.55" />
-        <path d="M20 52c4-14 12-22 28-22s24 8 28 22" fill="none" stroke={GOLD} strokeWidth="1.1" />
-        <path
-          d="M24 48c1.5-2 3-3.2 5-3.2M67 44.8c2 0 3.5 1.2 5 3.2M28 58c2.5 1.5 6 2.5 10 2.5h20c4 0 7.5-1 10-2.5"
-          fill="none"
-          stroke={GOLD}
-          strokeWidth="1"
-        />
-        <path d="M30 42c2-4 5-6 8-6M58 36c3 0 6 2 8 6" fill="none" stroke={GOLD} strokeWidth="1" />
-      </svg>
-      <p
-        className="relative z-[1] max-w-[3.1rem] text-center text-[7px] font-semibold uppercase leading-[1.2] tracking-[0.04em] sm:max-w-[3.4rem] sm:text-[8.5px]"
-        style={{ color: GOLD }}
-      >
-        30+ Years of Building Trust
-      </p>
-    </div>
-  );
-}
-
 export default function ImperiumFooter() {
   const primaryPhone = IMPERIUM.phones[0];
   const addressLine = `${IMPERIUM.road}, ${IMPERIUM.city}`;
@@ -115,16 +87,13 @@ export default function ImperiumFooter() {
       <div className="relative z-[1] mx-auto max-w-[1500px] px-5 pt-9 sm:px-8 sm:pt-14 lg:px-10 lg:pt-16">
         {/* ——— Phone layout ——— */}
         <div className="lg:hidden">
-          <div className="flex items-start justify-between gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/imperium-logo.png?v=7"
-              alt={IMPERIUM.name}
-              className="h-[4.25rem] w-auto object-contain object-left"
-              draggable={false}
-            />
-            <TrustBadge className="h-[3.75rem] w-[3.75rem]" />
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/imperium-logo.png?v=7"
+            alt={IMPERIUM.name}
+            className="h-[4.25rem] w-auto object-contain object-left"
+            draggable={false}
+          />
 
           <div className="mt-3 flex items-center gap-2">
             <span className="text-[8px] font-semibold uppercase tracking-[0.14em] text-white/45">
@@ -217,16 +186,13 @@ export default function ImperiumFooter() {
         {/* ——— Desktop layout ——— */}
         <div className="hidden lg:grid lg:grid-cols-[1.35fr_auto_0.85fr_auto_1.05fr] lg:items-start lg:gap-0">
           <div className="lg:pr-10">
-            <div className="flex items-start gap-5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/imperium-logo.png?v=7"
-                alt={IMPERIUM.name}
-                className="h-[6.5rem] w-auto object-contain object-left"
-                draggable={false}
-              />
-              <TrustBadge className="h-[5.1rem] w-[5.1rem]" />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/imperium-logo.png?v=7"
+              alt={IMPERIUM.name}
+              className="h-[6.5rem] w-auto object-contain object-left"
+              draggable={false}
+            />
             <p className="mt-5 max-w-[28rem] text-[14px] leading-relaxed text-white/75">
               Boutique offices and premium retail on Jalna Road — a sculptural commercial
               address for brands that intend to be seen in Chhatrapati Sambhajinagar.
