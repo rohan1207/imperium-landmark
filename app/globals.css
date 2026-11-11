@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "./imperium.css";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+img {
+  max-width: 100%;
+}
+
+a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+}
+
+::selection {
+  background: #c9a35a;
+  color: #0c0b0a;
+}
