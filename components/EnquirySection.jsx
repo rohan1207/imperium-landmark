@@ -17,7 +17,7 @@ export default function EnquirySection() {
   return (
     <section
       id="enquire"
-      className="relative scroll-mt-24 overflow-hidden border-t border-[var(--imp-stone-deep)] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22"
+      className="relative scroll-mt-24 overflow-hidden border-t border-[var(--imp-stone-deep)] px-5 py-10 sm:px-8 sm:py-18 lg:px-10 lg:py-22"
       style={{ backgroundColor: CREAM }}
       aria-label="Enquiry"
     >
@@ -35,7 +35,7 @@ export default function EnquirySection() {
       </svg>
 
       <div className="relative z-[1] mx-auto max-w-[1500px]">
-        <div className="grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 xl:gap-16">
+        <div className="grid items-start gap-5 sm:gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 xl:gap-16">
           <div className="max-w-xl">
             <div className="flex items-center gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2a2a2a] sm:text-[12px]">
@@ -45,7 +45,7 @@ export default function EnquirySection() {
             </div>
 
             <h2
-              className="mt-3 text-[clamp(1.85rem,4vw,3rem)] font-medium leading-[1.08] tracking-[-0.03em] text-[var(--imp-ink)]"
+              className="mt-2.5 text-[clamp(1.55rem,4vw,3rem)] font-medium leading-[1.08] tracking-[-0.03em] text-[var(--imp-ink)] sm:mt-3"
               style={{ fontFamily: "var(--imp-display)" }}
             >
               {titleParts[0]}
@@ -53,11 +53,31 @@ export default function EnquirySection() {
               {titleParts[1]}
             </h2>
 
-            <p className="mt-4 text-[14px] leading-relaxed text-[#3f3f3f] sm:text-[15px]">
+            <p className="mt-2.5 text-[13px] leading-relaxed text-[#3f3f3f] sm:mt-4 sm:text-[15px]">
               {ENQUIRY.body}
             </p>
 
-            <div className="mt-8 space-y-2">
+            {/* Phone: compact contact row */}
+            <div className="mt-4 grid grid-cols-2 gap-2 sm:hidden">
+              <a
+                href={`tel:${IMPERIUM.phones[0].replace(/\s/g, "")}`}
+                className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-3 text-[12px] font-semibold text-[var(--imp-ink)] ring-1 ring-black/[0.06]"
+              >
+                Call
+              </a>
+              <a
+                href={IMPERIUM.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-11 items-center justify-center gap-2 rounded-full px-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-white"
+                style={{ backgroundColor: GREEN }}
+              >
+                WhatsApp
+              </a>
+            </div>
+
+            {/* Desktop / tablet contact stack */}
+            <div className="mt-8 hidden space-y-2 sm:block">
               <a
                 href={`tel:${IMPERIUM.phones[0].replace(/\s/g, "")}`}
                 className="flex min-h-12 items-center gap-3 py-1 text-[14px] font-medium text-[var(--imp-ink)] transition hover:opacity-80"
@@ -95,7 +115,7 @@ export default function EnquirySection() {
               href={IMPERIUM.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex h-11 items-center gap-2 rounded-full px-5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition hover:brightness-110"
+              className="mt-8 hidden h-11 items-center gap-2 rounded-full px-5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition hover:brightness-110 sm:inline-flex"
               style={{ backgroundColor: GREEN }}
             >
               WhatsApp Us
@@ -103,11 +123,11 @@ export default function EnquirySection() {
             </a>
           </div>
 
-          <div className="rounded-[1.35rem] bg-white p-5 shadow-[0_22px_50px_-28px_rgba(27,48,34,0.45)] ring-1 ring-black/[0.04] sm:p-7 lg:p-8">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: GOLD }}>
+          <div className="rounded-[1.15rem] bg-white p-4 shadow-[0_18px_40px_-26px_rgba(27,48,34,0.45)] ring-1 ring-black/[0.04] sm:rounded-[1.35rem] sm:p-7 lg:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] sm:text-[12px]" style={{ color: GOLD }}>
               Send an enquiry
             </p>
-            <div className="mt-5">
+            <div className="mt-3.5 sm:mt-5">
               <ContactForm />
             </div>
           </div>

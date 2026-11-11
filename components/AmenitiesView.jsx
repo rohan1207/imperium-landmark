@@ -26,18 +26,18 @@ function AmenityBlock({ group, index }) {
   const num = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="relative px-5 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
-      <div className="mx-auto grid max-w-[1500px] items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+    <article className="relative px-5 py-8 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+      <div className="mx-auto grid max-w-[1500px] items-center gap-5 sm:gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
         <div className={`relative ${imageLeft ? "lg:order-1" : "lg:order-2"}`}>
-          <div className="relative overflow-hidden rounded-[1.5rem] shadow-[0_24px_50px_-28px_rgba(10,42,34,0.45)] sm:rounded-[1.75rem]">
+          <div className="relative overflow-hidden rounded-[1.15rem] shadow-[0_24px_50px_-28px_rgba(10,42,34,0.45)] sm:rounded-[1.75rem]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={group.image}
               alt={group.title}
-              className="aspect-[16/11] w-full object-cover"
+              className="aspect-[16/10] w-full object-cover sm:aspect-[16/11]"
             />
             <span
-              className="absolute left-3 top-3 flex h-11 w-11 items-center justify-center rounded-full text-[12px] font-semibold tracking-[0.08em] text-[var(--imp-ink)] shadow-md sm:left-4 sm:top-4 sm:h-12 sm:w-12 sm:text-[13px]"
+              className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full text-[11px] font-semibold tracking-[0.08em] text-[var(--imp-ink)] shadow-md sm:left-4 sm:top-4 sm:h-12 sm:w-12 sm:text-[13px]"
               style={{
                 background: `linear-gradient(165deg, #d4b06e, ${GOLD} 48%, #8a6a3a)`,
               }}
@@ -49,15 +49,15 @@ function AmenityBlock({ group, index }) {
 
         <div className={`${imageLeft ? "lg:order-2" : "lg:order-1"}`}>
           <h2
-            className="text-[clamp(1.55rem,3vw,2.25rem)] font-medium uppercase leading-[1.1] tracking-[-0.02em]"
+            className="text-[clamp(1.35rem,3vw,2.25rem)] font-medium uppercase leading-[1.1] tracking-[-0.02em]"
             style={{ fontFamily: "var(--imp-display)", color: GREEN }}
           >
             {group.title}
           </h2>
-          <ul className="mt-6 space-y-3.5 sm:mt-7 sm:space-y-4">
+          <ul className="mt-4 grid grid-cols-1 gap-2.5 sm:mt-7 sm:grid-cols-1 sm:space-y-0 sm:gap-4">
             {group.items.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-[14px] text-[#3a3a3a] sm:text-[15px]">
-                <span className="mt-1 shrink-0">
+              <li key={item} className="flex items-start gap-2.5 text-[13px] text-[#3a3a3a] sm:gap-3 sm:text-[15px]">
+                <span className="mt-0.5 shrink-0 sm:mt-1">
                   <CheckIcon />
                 </span>
                 <span>{item}</span>
@@ -192,7 +192,7 @@ export default function AmenitiesView() {
 
         {/* Mobile / small tablet hero */}
         <div className="relative lg:hidden">
-          <div className="px-5 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-6">
+          <div className="px-5 pb-4 pt-3 sm:px-8 sm:pb-8 sm:pt-6">
             <div className="flex items-center gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] sm:text-[12px]">
                 {AMENITIES.eyebrow}
@@ -201,7 +201,7 @@ export default function AmenitiesView() {
             </div>
 
             <h1
-              className="mt-3 text-[clamp(1.85rem,7vw,2.6rem)] font-medium leading-[1.08] tracking-[-0.03em] text-[#1A1A1A]"
+              className="mt-2.5 text-[clamp(1.55rem,7vw,2.6rem)] font-medium leading-[1.08] tracking-[-0.03em] text-[#1A1A1A] sm:mt-3"
               style={{ fontFamily: "var(--imp-display)" }}
             >
               {before}
@@ -209,7 +209,7 @@ export default function AmenitiesView() {
               {after}
             </h1>
 
-            <p className="mt-4 max-w-[34rem] text-[14px] leading-relaxed text-[#2f2f2f] sm:text-[15px]">
+            <p className="mt-2.5 max-w-[34rem] text-[13px] leading-relaxed text-[#2f2f2f] sm:mt-4 sm:text-[15px]">
               {AMENITIES.body}
             </p>
 

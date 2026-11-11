@@ -17,7 +17,7 @@ export default function PageHero({ eyebrow, title, body, accent }) {
 
   return (
     <section
-      className="relative overflow-hidden border-b border-[var(--imp-stone-deep)] px-5 pb-12 pt-[calc(4.25rem+2.25rem)] sm:px-8 sm:pb-14 sm:pt-[calc(5rem+2.75rem)] lg:px-10 lg:pb-16 lg:pt-[calc(5.5rem+3rem)]"
+      className="relative overflow-hidden border-b border-[var(--imp-stone-deep)] px-5 pb-8 pt-[calc(4.25rem+1.5rem)] sm:px-8 sm:pb-14 sm:pt-[calc(5rem+2.75rem)] lg:px-10 lg:pb-16 lg:pt-[calc(5.5rem+3rem)]"
       style={{ backgroundColor: CREAM }}
       aria-label={eyebrow || "Page header"}
     >
@@ -37,13 +37,13 @@ export default function PageHero({ eyebrow, title, body, accent }) {
           <span className="h-px w-11 sm:w-14" style={{ backgroundColor: GOLD }} />
         </div>
         <h1
-          className="mt-3 max-w-[20ch] text-[clamp(1.85rem,6.5vw,3.75rem)] font-medium leading-[1.08] tracking-[-0.03em] sm:max-w-[18ch] sm:leading-[1.05]"
+          className="mt-2.5 max-w-[20ch] text-[clamp(1.55rem,6.5vw,3.75rem)] font-medium leading-[1.08] tracking-[-0.03em] sm:mt-3 sm:max-w-[18ch] sm:leading-[1.05]"
           style={{ fontFamily: "var(--imp-display)", color: GREEN }}
         >
           {heading}
         </h1>
         {body ? (
-          <p className="mt-4 max-w-[42rem] text-[14px] leading-relaxed text-[#3f3f3f] sm:mt-5 sm:text-[16px]">
+          <p className="mt-3 max-w-[42rem] text-[13px] leading-relaxed text-[#3f3f3f] sm:mt-5 sm:text-[16px]">
             {body}
           </p>
         ) : null}

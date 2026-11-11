@@ -73,7 +73,7 @@ export default function LocationView() {
         aria-label="Location"
         style={{ backgroundColor: CREAM }}
       >
-        <div className="relative mx-auto grid max-w-[1500px] items-center gap-8 px-5 pb-10 sm:px-8 sm:pb-12 lg:grid-cols-[0.9fr_1.2fr] lg:gap-10 lg:px-10 lg:pb-14 xl:gap-14">
+        <div className="relative mx-auto grid max-w-[1500px] items-center gap-5 px-5 pb-8 sm:gap-8 sm:px-8 sm:pb-12 lg:grid-cols-[0.9fr_1.2fr] lg:gap-10 lg:px-10 lg:pb-14 xl:gap-14">
           <div className="relative z-[1] max-w-xl lg:max-w-none lg:pr-2">
             <div className="flex items-center gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#1A1A1A] sm:text-[12px]">
@@ -83,7 +83,7 @@ export default function LocationView() {
             </div>
 
             <h1
-              className="mt-4 text-[clamp(1.95rem,4.2vw,3.35rem)] font-medium leading-[1.06] tracking-[-0.03em] text-[#1A1A1A]"
+              className="mt-2.5 text-[clamp(1.55rem,4.2vw,3.35rem)] font-medium leading-[1.06] tracking-[-0.03em] text-[#1A1A1A] sm:mt-4"
               style={{ fontFamily: "var(--imp-display)" }}
             >
               {before}
@@ -91,7 +91,7 @@ export default function LocationView() {
               {after}
             </h1>
 
-            <p className="mt-5 max-w-[32rem] text-[14px] leading-[1.7] text-[#2f2f2f] sm:text-[15px]">
+            <p className="mt-3 max-w-[32rem] text-[13px] leading-[1.65] text-[#2f2f2f] sm:mt-5 sm:text-[15px] sm:leading-[1.7]">
               {LOCATION_PAGE.body}
             </p>
 
@@ -112,22 +112,22 @@ export default function LocationView() {
               </p>
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-7 sm:flex sm:flex-wrap sm:gap-3">
               <a
                 href="#location-distances"
-                className="inline-flex h-11 items-center gap-2 rounded-full px-6 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition hover:brightness-110"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-full px-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition hover:brightness-110 sm:px-6 sm:text-[12px]"
                 style={{ backgroundColor: GREEN }}
               >
-                View distances
-                <span aria-hidden>→</span>
+                Distances
+                <span aria-hidden className="hidden sm:inline">→</span>
               </a>
               <Link
                 href="/contact"
-                className="inline-flex h-11 items-center gap-2 rounded-full border px-6 text-[12px] font-semibold uppercase tracking-[0.12em] transition hover:bg-black/[0.03]"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-full border px-3 text-[11px] font-semibold uppercase tracking-[0.1em] transition hover:bg-black/[0.03] sm:px-6 sm:text-[12px]"
                 style={{ borderColor: GOLD, color: GOLD }}
               >
                 Enquire
-                <span aria-hidden>→</span>
+                <span aria-hidden className="hidden sm:inline">→</span>
               </Link>
             </div>
           </div>
@@ -171,12 +171,12 @@ export default function LocationView() {
       {/* Distances */}
       <section
         id="location-distances"
-        className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
+        className="scroll-mt-24 px-5 py-9 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
         style={{ backgroundColor: WHITE }}
         aria-label="Key distances"
       >
         <div className="mx-auto max-w-[1500px]">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-xl">
               <div className="flex items-center gap-3">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] sm:text-[12px]">
@@ -185,22 +185,22 @@ export default function LocationView() {
                 <span className="h-px w-11" style={{ backgroundColor: GOLD }} />
               </div>
               <h2
-                className="mt-3 text-[clamp(1.65rem,3.4vw,2.55rem)] font-medium leading-[1.1] tracking-[-0.03em] text-[#1A1A1A]"
+                className="mt-2.5 text-[clamp(1.45rem,3.4vw,2.55rem)] font-medium leading-[1.1] tracking-[-0.03em] text-[#1A1A1A] sm:mt-3"
                 style={{ fontFamily: "var(--imp-display)" }}
               >
                 {LOCATION_PAGE.corridorTitle}
               </h2>
             </div>
-            <p className="max-w-md text-[14px] leading-relaxed text-[#3f3f3f] sm:text-[15px] lg:pb-1">
+            <p className="max-w-md text-[13px] leading-relaxed text-[#3f3f3f] sm:text-[15px] lg:pb-1">
               {LOCATION_PAGE.corridorBody}
             </p>
           </div>
 
-          <ul className="mt-10 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-5 lg:gap-3 xl:gap-4">
+          <ul className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-5 lg:gap-3 xl:gap-4">
             {LOCATION_DISTANCES.map((item) => (
               <li
                 key={item.id}
-                className="flex items-center gap-3 rounded-[1.15rem] border border-black/[0.05] bg-[#FBF7F1] px-4 py-4 sm:flex-col sm:items-start sm:px-5 sm:py-5 lg:min-h-[9.5rem]"
+                className="flex items-center gap-2.5 rounded-[1rem] border border-black/[0.05] bg-[#FBF7F1] px-3 py-3 sm:flex-col sm:items-start sm:gap-3 sm:rounded-[1.15rem] sm:px-5 sm:py-5 lg:min-h-[9.5rem]"
               >
                 <span
                   className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"

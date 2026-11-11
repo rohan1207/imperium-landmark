@@ -257,7 +257,7 @@ export default function Proximity() {
   return (
     <section
       id="connectivity"
-      className="relative scroll-mt-24 overflow-hidden border-t border-[var(--imp-stone-deep)] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22"
+      className="relative scroll-mt-24 overflow-hidden border-t border-[var(--imp-stone-deep)] px-5 py-9 sm:px-8 sm:py-18 lg:px-10 lg:py-22"
       style={{ backgroundColor: CREAM }}
       aria-label="Connectivity"
     >

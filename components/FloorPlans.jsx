@@ -136,7 +136,7 @@ function PlanCarousel({ slides }) {
 
       {/* Phone carousel */}
       <div className="md:hidden">
-        <div className="overflow-hidden rounded-[1.2rem] bg-white shadow-[0_18px_40px_-24px_rgba(27,48,34,0.5)] ring-1 ring-black/[0.04]">
+        <div className="overflow-hidden rounded-[1rem] bg-white shadow-[0_14px_32px_-22px_rgba(27,48,34,0.5)] ring-1 ring-black/[0.04]">
           <div
             className="flex transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${index * 100}%)` }}
@@ -159,7 +159,7 @@ function PlanCarousel({ slides }) {
                 <img
                   src={slide.image}
                   alt={slide.title}
-                  className="aspect-[4/3] w-full object-contain object-center bg-[#fffdf9] p-2"
+                  className="aspect-[5/4] w-full object-contain object-center bg-[#fffdf9] p-1.5"
                   draggable={false}
                 />
               </div>
@@ -167,41 +167,48 @@ function PlanCarousel({ slides }) {
           </div>
         </div>
 
-        <div className="mt-4 flex items-center justify-center gap-3">
+        <div className="mt-3 flex items-center justify-between gap-2">
           <button
             type="button"
             onClick={prev}
             aria-label="Previous floor plan"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-[var(--imp-ink)] shadow-sm"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/10 bg-white text-[var(--imp-ink)] shadow-sm"
           >
             <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M12.5 5 7.5 10l5 5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
-          <div className="flex items-center gap-1.5">
-            {slides.map((slide, i) => (
-              <button
-                key={slide.id}
-                type="button"
-                aria-label={`Show ${slide.title}`}
-                aria-current={i === index}
-                onClick={() => setIndex(i)}
-                className="flex h-11 w-11 items-center justify-center"
-              >
-                <span
-                  className={`block h-2 rounded-full transition-all ${
-                    i === index ? "w-5" : "w-2 bg-black/20"
-                  }`}
-                  style={i === index ? { backgroundColor: GREEN } : undefined}
-                />
-              </button>
-            ))}
+          <div className="min-w-0 text-center">
+            <p className="truncate text-[12px] font-medium text-[#5a5a5a]">
+              {active.title}
+              <span className="text-black/30"> · </span>
+              {index + 1}/{total}
+            </p>
+            <div className="mt-1.5 flex items-center justify-center gap-1.5">
+              {slides.map((slide, i) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  aria-label={`Show ${slide.title}`}
+                  aria-current={i === index}
+                  onClick={() => setIndex(i)}
+                  className="flex h-6 w-6 items-center justify-center"
+                >
+                  <span
+                    className={`block h-1.5 rounded-full transition-all ${
+                      i === index ? "w-4" : "w-1.5 bg-black/20"
+                    }`}
+                    style={i === index ? { backgroundColor: GREEN } : undefined}
+                  />
+                </button>
+              ))}
+            </div>
           </div>
           <button
             type="button"
             onClick={next}
             aria-label="Next floor plan"
-            className="flex h-11 w-11 items-center justify-center rounded-full text-white shadow-sm"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white shadow-sm"
             style={{ backgroundColor: GREEN }}
           >
             <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -209,12 +216,6 @@ function PlanCarousel({ slides }) {
             </svg>
           </button>
         </div>
-
-        <p className="mt-4 text-center text-[12px] font-medium text-[#5a5a5a]">
-          {active.title}
-          <span className="text-black/30"> · </span>
-          {index + 1} / {total}
-        </p>
       </div>
 
       <p className="mt-6 hidden text-center text-[12px] font-medium text-[#5a5a5a] md:block lg:text-right lg:pr-8 xl:pr-12">
@@ -232,7 +233,7 @@ export default function FloorPlans() {
   return (
     <section
       id="floor-plans"
-      className="relative scroll-mt-24 overflow-hidden border-t border-[var(--imp-stone-deep)] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22"
+      className="relative scroll-mt-24 overflow-hidden border-t border-[var(--imp-stone-deep)] px-5 py-10 sm:px-8 sm:py-18 lg:px-10 lg:py-22"
       style={{ backgroundColor: CREAM }}
       aria-label="Floor plans"
     >
@@ -279,7 +280,7 @@ export default function FloorPlans() {
       />
 
       <div className="relative z-[1] mx-auto max-w-[1500px]">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)] lg:gap-12 xl:gap-16">
+        <div className="grid items-center gap-6 sm:gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)] lg:gap-12 xl:gap-16">
           {/* Copy column */}
           <div className="max-w-xl lg:max-w-none">
             <div className="flex items-center gap-3">
@@ -290,28 +291,28 @@ export default function FloorPlans() {
             </div>
 
             <h2
-              className="mt-3 text-[clamp(1.85rem,4vw,3.1rem)] font-medium leading-[1.08] tracking-[-0.03em] text-[var(--imp-ink)]"
+              className="mt-3 text-[clamp(1.55rem,4vw,3.1rem)] font-medium leading-[1.08] tracking-[-0.03em] text-[var(--imp-ink)]"
               style={{ fontFamily: "var(--imp-display)" }}
             >
               {titleBefore}{" "}
               <em style={{ color: GOLD, fontStyle: "italic" }}>{PLANS.titleAccent}</em>
             </h2>
 
-            <p className="mt-3 max-w-[30rem] text-[14px] leading-relaxed text-[#3f3f3f] sm:text-[15px]">
+            <p className="mt-2.5 max-w-[30rem] text-[13px] leading-relaxed text-[#3f3f3f] sm:mt-3 sm:text-[15px]">
               {PLANS.body}
             </p>
 
-            <ul className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-0">
+            <ul className="mt-5 grid grid-cols-3 gap-2 sm:mt-10 sm:flex sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-0">
               {PLANS.features.map((feature, i) => (
                 <li
                   key={feature.id}
-                  className={`flex items-center gap-3 sm:min-w-0 sm:flex-1 sm:flex-col sm:items-center sm:px-4 sm:text-center ${
-                    i > 0 ? "border-t border-black/[0.08] pt-4 sm:border-l sm:border-t-0 sm:pt-0" : ""
+                  className={`flex min-w-0 flex-col items-center gap-1.5 rounded-xl bg-white/70 px-1.5 py-2.5 text-center ring-1 ring-black/[0.04] sm:flex-1 sm:rounded-none sm:bg-transparent sm:px-4 sm:py-0 sm:ring-0 ${
+                    i > 0 ? "sm:border-l" : ""
                   }`}
                   style={i > 0 ? { borderColor: `${GOLD}55` } : undefined}
                 >
                   <FeatureIcon type={feature.icon} />
-                  <span className="text-[13px] font-semibold leading-snug text-[var(--imp-ink)] sm:mt-2.5 sm:text-[12px]">
+                  <span className="text-[10px] font-semibold leading-snug text-[var(--imp-ink)] sm:mt-2.5 sm:text-[12px]">
                     {feature.label}
                   </span>
                 </li>
@@ -334,24 +335,26 @@ export default function FloorPlans() {
           </div>
 
           {/* Carousel column */}
-          <div className="min-w-0 pb-2 md:pb-8">
+          <div className="min-w-0 md:pb-8">
             <PlanCarousel slides={PLANS.slides} />
           </div>
         </div>
 
-        {/* Phone CTA */}
-        <a
-          href={PLANS.downloadHref}
-          download
-          className="mt-8 flex h-12 w-full items-center justify-center gap-2.5 rounded-full px-5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white shadow-[0_14px_30px_-14px_rgba(162,132,77,0.75)] transition hover:brightness-105 md:hidden"
-          style={{
-            background: `linear-gradient(165deg, #d4b06e, ${GOLD} 48%, #8a6a3a)`,
-          }}
-        >
-          <DownloadIcon />
-          {PLANS.downloadLabel}
-          <span aria-hidden>→</span>
-        </a>
+        {/* Phone CTA — short pill */}
+        <div className="mt-5 flex justify-center md:hidden">
+          <a
+            href={PLANS.downloadHref}
+            download
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white shadow-[0_14px_30px_-14px_rgba(162,132,77,0.75)] transition hover:brightness-105"
+            style={{
+              background: `linear-gradient(165deg, #d4b06e, ${GOLD} 48%, #8a6a3a)`,
+            }}
+          >
+            <DownloadIcon />
+            Download Plan
+            <span aria-hidden>→</span>
+          </a>
+        </div>
       </div>
     </section>
   );

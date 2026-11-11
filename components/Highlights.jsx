@@ -13,7 +13,7 @@ export default function Highlights({ layout = "scroll" }) {
   const nudge = (dir) => {
     const el = scroller.current;
     if (!el) return;
-    el.scrollBy({ left: dir * Math.min(360, el.clientWidth * 0.8), behavior: "smooth" });
+    el.scrollBy({ left: dir * Math.min(300, el.clientWidth * 0.72), behavior: "smooth" });
   };
 
   return (
@@ -22,7 +22,7 @@ export default function Highlights({ layout = "scroll" }) {
       style={{ backgroundColor: CREAM }}
       aria-label="Highlights"
     >
-      <div className="mx-auto flex max-w-[1500px] items-end justify-between gap-6 px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto flex max-w-[1500px] items-end justify-between gap-4 px-6 sm:gap-6 sm:px-8 lg:px-12">
         <div className="min-w-0 max-w-[42rem]">
           <div className="flex items-center gap-3">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2a2a2a] sm:text-[12px]">
@@ -31,7 +31,7 @@ export default function Highlights({ layout = "scroll" }) {
             <span className="h-px w-11 sm:w-14" style={{ backgroundColor: GOLD }} />
           </div>
           <h2
-            className="mt-3 text-[clamp(1.7rem,3.4vw,2.85rem)] font-medium leading-[1.08] tracking-[-0.03em]"
+            className="mt-3 text-[clamp(1.55rem,3.4vw,2.85rem)] font-medium leading-[1.08] tracking-[-0.03em]"
             style={{ fontFamily: "var(--imp-display)" }}
           >
             The details that set Imperium apart
@@ -44,7 +44,7 @@ export default function Highlights({ layout = "scroll" }) {
               type="button"
               aria-label="Previous highlights"
               onClick={() => nudge(-1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-[var(--imp-ink)] transition hover:border-[var(--imp-gold)]"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-[var(--imp-ink)] transition hover:border-[var(--imp-gold)] sm:h-11 sm:w-11"
             >
               ←
             </button>
@@ -52,7 +52,7 @@ export default function Highlights({ layout = "scroll" }) {
               type="button"
               aria-label="Next highlights"
               onClick={() => nudge(1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-[var(--imp-ink)] transition hover:border-[var(--imp-gold)]"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-[var(--imp-ink)] transition hover:border-[var(--imp-gold)] sm:h-11 sm:w-11"
             >
               →
             </button>
@@ -61,11 +61,11 @@ export default function Highlights({ layout = "scroll" }) {
       </div>
 
       {isGrid ? (
-        <div className="mx-auto mt-10 grid max-w-[1500px] gap-5 px-5 sm:grid-cols-2 sm:gap-6 sm:px-8 lg:grid-cols-3 lg:px-10">
+        <div className="mx-auto mt-8 grid max-w-[1500px] gap-4 px-6 sm:mt-10 sm:grid-cols-2 sm:gap-6 sm:px-8 lg:grid-cols-3 lg:px-12">
           {HIGHLIGHTS.map((item) => (
             <article
               key={item.id}
-              className="group flex flex-col overflow-hidden rounded-[1.2rem] bg-white shadow-[0_16px_36px_-24px_rgba(27,48,34,0.4)] ring-1 ring-black/[0.04]"
+              className="group flex flex-col overflow-hidden rounded-[1.1rem] bg-white shadow-[0_16px_36px_-24px_rgba(27,48,34,0.4)] ring-1 ring-black/[0.04] sm:rounded-[1.2rem]"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-[var(--imp-stone-deep)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -76,17 +76,17 @@ export default function Highlights({ layout = "scroll" }) {
                   draggable={false}
                 />
               </div>
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em]" style={{ color: GOLD }}>
+              <div className="flex flex-1 flex-col p-4 sm:p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] sm:text-[11px]" style={{ color: GOLD }}>
                   {item.kicker}
                 </p>
                 <h3
-                  className="mt-2.5 text-[1.25rem] font-medium leading-[1.1] tracking-[-0.02em] text-[var(--imp-ink)] sm:text-[1.4rem]"
+                  className="mt-2 text-[1.15rem] font-medium leading-[1.1] tracking-[-0.02em] text-[var(--imp-ink)] sm:mt-2.5 sm:text-[1.4rem]"
                   style={{ fontFamily: "var(--imp-display)" }}
                 >
                   {item.title}
                 </h3>
-                <p className="mt-2.5 text-[13px] leading-relaxed text-[#4a4a4a] sm:text-[14px]">
+                <p className="mt-2 text-[12.5px] leading-relaxed text-[#4a4a4a] sm:mt-2.5 sm:text-[14px]">
                   {item.body}
                 </p>
               </div>
@@ -96,14 +96,14 @@ export default function Highlights({ layout = "scroll" }) {
       ) : (
         <div
           ref={scroller}
-          className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:gap-5 sm:px-8 lg:px-10 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-pl-6 scroll-pr-6 px-6 pb-2 sm:mt-10 sm:gap-5 sm:scroll-pl-8 sm:scroll-pr-8 sm:px-8 lg:scroll-pl-12 lg:scroll-pr-12 lg:px-12 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {HIGHLIGHTS.map((item) => (
             <article
               key={item.id}
-              className="group flex w-[78vw] max-w-[340px] shrink-0 snap-start flex-col overflow-hidden rounded-[1.15rem] bg-white shadow-[0_16px_36px_-24px_rgba(27,48,34,0.4)] ring-1 ring-black/[0.04] sm:w-[300px] lg:w-[320px]"
+              className="group flex w-[68vw] max-w-[240px] shrink-0 snap-start flex-col overflow-hidden rounded-[1rem] bg-white shadow-[0_16px_36px_-24px_rgba(27,48,34,0.4)] ring-1 ring-black/[0.04] sm:w-[280px] sm:max-w-none sm:rounded-[1.15rem] lg:w-[300px]"
             >
-              <div className="relative aspect-[4/5] max-h-[22rem] overflow-hidden bg-[var(--imp-stone-deep)] sm:aspect-[3/4] sm:max-h-none">
+              <div className="relative aspect-[5/4] overflow-hidden bg-[var(--imp-stone-deep)] sm:aspect-[3/4]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={item.image}
@@ -112,17 +112,17 @@ export default function Highlights({ layout = "scroll" }) {
                   draggable={false}
                 />
               </div>
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em]" style={{ color: GOLD }}>
+              <div className="flex flex-1 flex-col p-3.5 sm:p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] sm:text-[11px] sm:tracking-[0.16em]" style={{ color: GOLD }}>
                   {item.kicker}
                 </p>
                 <h3
-                  className="mt-2.5 text-[1.35rem] font-medium leading-[1.08] tracking-[-0.02em] text-[var(--imp-ink)] sm:text-[1.5rem]"
+                  className="mt-1.5 text-[1.05rem] font-medium leading-[1.12] tracking-[-0.02em] text-[var(--imp-ink)] sm:mt-2.5 sm:text-[1.45rem] sm:leading-[1.08]"
                   style={{ fontFamily: "var(--imp-display)" }}
                 >
                   {item.title}
                 </h3>
-                <p className="mt-3 text-[13px] leading-relaxed text-[#4a4a4a] sm:text-[14px]">
+                <p className="mt-2 line-clamp-3 text-[12px] leading-relaxed text-[#4a4a4a] sm:mt-3 sm:line-clamp-none sm:text-[14px]">
                   {item.body}
                 </p>
               </div>

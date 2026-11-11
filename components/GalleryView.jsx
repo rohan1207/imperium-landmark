@@ -17,32 +17,32 @@ export default function GalleryView() {
 
   return (
     <section
-      className="overflow-hidden px-5 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
+      className="overflow-hidden px-5 py-8 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
       style={{ backgroundColor: CREAM }}
       aria-label="Project gallery"
     >
       <div className="mx-auto max-w-[1500px]">
-        <div className="relative overflow-hidden rounded-[1.25rem] bg-[var(--imp-ink)] shadow-[0_24px_50px_-28px_rgba(27,48,34,0.55)] sm:rounded-[1.5rem]">
+        <div className="relative overflow-hidden rounded-[1rem] bg-[var(--imp-ink)] shadow-[0_24px_50px_-28px_rgba(27,48,34,0.55)] sm:rounded-[1.5rem]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={slide.src}
             alt={slide.alt}
-            className="aspect-[4/3] w-full object-cover sm:aspect-[16/10] lg:aspect-[21/10]"
+            className="aspect-[5/4] w-full object-cover sm:aspect-[16/10] lg:aspect-[21/10]"
           />
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-5 sm:p-8">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em]" style={{ color: GOLD }}>
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-3.5 sm:p-8">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] sm:text-[11px]" style={{ color: GOLD }}>
                   {String(active + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
                 </p>
-                <p className="mt-2 text-[16px] text-white sm:text-[18px]">{slide.caption}</p>
+                <p className="mt-1 truncate text-[14px] text-white sm:mt-2 sm:text-[18px]">{slide.caption}</p>
               </div>
-              <div className="flex gap-2.5">
+              <div className="flex gap-2">
                 <button
                   type="button"
                   onClick={prev}
                   aria-label="Previous image"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-[var(--imp-ink)] transition hover:bg-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-[var(--imp-ink)] transition hover:bg-white sm:h-11 sm:w-11"
                 >
                   ←
                 </button>
@@ -50,7 +50,7 @@ export default function GalleryView() {
                   type="button"
                   onClick={next}
                   aria-label="Next image"
-                  className="flex h-11 w-11 items-center justify-center rounded-full text-white transition hover:brightness-110"
+                  className="flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:brightness-110 sm:h-11 sm:w-11"
                   style={{ backgroundColor: GREEN }}
                 >
                   →
@@ -60,7 +60,7 @@ export default function GalleryView() {
           </div>
         </div>
 
-        <div className="mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="mt-3.5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto scroll-pl-1 pb-1 sm:mt-5 sm:gap-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {GALLERY.slides.map((item, i) => (
             <button
               key={item.src}
@@ -68,7 +68,7 @@ export default function GalleryView() {
               onClick={() => setActive(i)}
               aria-label={item.caption}
               aria-current={i === active}
-              className={`relative h-20 w-[7.25rem] shrink-0 snap-start overflow-hidden rounded-xl border-2 transition sm:h-24 sm:w-36 ${
+              className={`relative h-16 w-[5.75rem] shrink-0 snap-start overflow-hidden rounded-lg border-2 transition sm:h-24 sm:w-36 sm:rounded-xl ${
                 i === active ? "opacity-100" : "opacity-70 hover:opacity-100"
               }`}
               style={{ borderColor: i === active ? GOLD : "transparent" }}

@@ -21,21 +21,32 @@ export default function ImperiumNav() {
   }, [open]);
 
   return (
-    <header
-      className="fixed inset-x-0 top-0 z-50 border-b border-black/[0.06] bg-white"
-    >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/[0.06] bg-white">
       <nav className="mx-auto flex h-[4.25rem] max-w-[1500px] items-center justify-between gap-3 px-5 sm:h-[5rem] sm:gap-5 sm:px-6 lg:h-[5.5rem] lg:px-8 xl:px-10">
-        <Link href="/" className="group flex min-w-0 shrink-0 flex-col items-start">
-          <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[var(--imp-gold-dark)] sm:text-[10px]">
-            A project by
-          </span>
+        <Link
+          href="/"
+          className="group flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3"
+          aria-label={`${IMPERIUM.name} home`}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/lilasons-logo.png"
-            alt={IMPERIUM.developer}
-            className="mt-0.5 h-9 w-auto object-contain object-left sm:mt-1 sm:h-11 lg:h-12 xl:h-[3.25rem]"
+            src="/imperium-logo-dark.png?v=1"
+            alt={IMPERIUM.name}
+            className="h-12 w-auto object-contain object-left transition group-hover:opacity-90 sm:h-[3.35rem] lg:h-14"
             draggable={false}
           />
+          <span className="hidden min-w-0 flex-col sm:flex">
+            <span className="text-[8px] font-semibold uppercase tracking-[0.16em] text-[var(--imp-muted)]">
+              A project by
+            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/lilasons-logo.png"
+              alt={IMPERIUM.developer}
+              className="mt-1 h-7 w-auto object-contain object-left opacity-90 sm:h-8 lg:h-9"
+              draggable={false}
+            />
+          </span>
         </Link>
 
         <ul className="hidden min-w-0 flex-1 items-center justify-center gap-x-5 lg:flex xl:gap-x-7 2xl:gap-x-8">
@@ -69,7 +80,7 @@ export default function ImperiumNav() {
 
         <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
           <Link
-            href={pathname === "/" ? "/#enquire" : "/contact"}
+            href="/contact"
             className="imperium-btn imperium-btn-solid !h-11 !min-h-11 !px-4 text-[11px] sm:!px-5"
           >
             Enquire

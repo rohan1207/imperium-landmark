@@ -63,7 +63,7 @@ export default function AboutHero() {
       <div className="grid lg:grid-cols-2">
         {/* Left — copy */}
         <div
-          className="relative flex flex-col justify-center px-5 pb-16 pt-[calc(4.25rem+2.5rem)] sm:px-8 sm:pb-20 sm:pt-[calc(5rem+3rem)] lg:px-10 lg:pb-28 lg:pt-[calc(5.5rem+3.5rem)] xl:px-14"
+          className="relative flex flex-col justify-center px-5 pb-10 pt-[calc(4.25rem+1.75rem)] sm:px-8 sm:pb-20 sm:pt-[calc(5rem+3rem)] lg:px-10 lg:pb-28 lg:pt-[calc(5.5rem+3.5rem)] xl:px-14"
           style={{ backgroundColor: GREEN }}
         >
           <div className="mx-auto w-full max-w-[36rem] lg:mx-0 lg:max-w-[34rem]">
@@ -75,7 +75,7 @@ export default function AboutHero() {
             </div>
 
             <h1
-              className="mt-4 text-[clamp(1.9rem,4.2vw,3.15rem)] font-medium leading-[1.08] tracking-[-0.03em] text-white"
+              className="mt-3 text-[clamp(1.55rem,4.2vw,3.15rem)] font-medium leading-[1.08] tracking-[-0.03em] text-white sm:mt-4"
               style={{ fontFamily: "var(--imp-display)" }}
             >
               {before}
@@ -105,7 +105,7 @@ export default function AboutHero() {
                 <span aria-hidden>→</span>
               </Link>
               <Link
-                href="/#enquire"
+                href="/contact"
                 className="inline-flex h-11 items-center gap-2 rounded-full border border-white/35 px-5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-white/10 sm:text-[12px]"
               >
                 Enquire
@@ -116,7 +116,7 @@ export default function AboutHero() {
         </div>
 
         {/* Right — image */}
-        <div className="relative min-h-[280px] sm:min-h-[380px] lg:min-h-full">
+        <div className="relative min-h-[220px] sm:min-h-[380px] lg:min-h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={IMPERIUM.hero.desktop}
@@ -129,14 +129,14 @@ export default function AboutHero() {
 
       {/* Floating facts ribbon */}
       <div className="relative z-[2] mx-auto -mt-5 max-w-[1500px] px-5 sm:-mt-10 sm:px-8 lg:-mt-12 lg:px-10">
-        <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-[1.15rem] bg-white shadow-[0_22px_50px_-28px_rgba(13,47,36,0.45)] ring-1 ring-black/[0.04] sm:grid-cols-2 sm:rounded-[1.35rem] lg:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-[1rem] bg-white shadow-[0_22px_50px_-28px_rgba(13,47,36,0.45)] ring-1 ring-black/[0.04] sm:rounded-[1.35rem] lg:grid-cols-4">
           {ABOUT.facts.map((fact, i) => (
             <li
               key={fact.label}
-              className="flex items-start gap-3.5 bg-[#fffdf9] px-4 py-4 sm:gap-3.5 sm:px-5 sm:py-5 lg:px-6 lg:py-6"
+              className="flex items-start gap-2.5 bg-[#fffdf9] px-3 py-3.5 sm:gap-3.5 sm:px-5 sm:py-5 lg:px-6 lg:py-6"
             >
               <span
-                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.7rem] sm:h-10 sm:w-10"
+                className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-[0.6rem] sm:h-10 sm:w-10 sm:rounded-[0.7rem]"
                 style={{ backgroundColor: "#F3E8D8" }}
               >
                 <FactIcon type={FACT_ICONS[i]} />
@@ -148,7 +148,7 @@ export default function AboutHero() {
                 >
                   {fact.label}
                 </span>
-                <span className="mt-1 block text-[14px] font-semibold leading-snug text-[var(--imp-ink)]">
+                <span className="mt-1 block text-[12px] font-semibold leading-snug text-[var(--imp-ink)] sm:text-[14px]">
                   {fact.value}
                 </span>
               </span>

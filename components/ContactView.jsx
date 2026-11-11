@@ -12,9 +12,9 @@ export default function ContactView() {
 
   return (
     <div style={{ backgroundColor: CREAM }}>
-      {/* Map hero — full screen on desktop; shorter map + copy on phone */}
+      {/* Map hero */}
       <section className="relative overflow-hidden" aria-label="Contact Us">
-        <div className="relative mt-[4.25rem] h-[min(58svh,420px)] min-h-[280px] sm:mt-[5rem] sm:h-[min(62svh,520px)] lg:mt-0 lg:h-dvh lg:min-h-dvh">
+        <div className="relative mt-[4.25rem] h-[min(42svh,320px)] min-h-[220px] sm:mt-[5rem] sm:h-[min(56svh,480px)] lg:mt-0 lg:h-dvh lg:min-h-dvh">
           <iframe
             title="Lilasons Developers office location on Google Maps"
             src={CONTACT_PAGE.mapEmbed}
@@ -24,7 +24,6 @@ export default function ContactView() {
             allowFullScreen
           />
 
-          {/* Light scrim — pointer-events none so map stays clickable */}
           <div
             className="pointer-events-none absolute inset-0 z-[1]"
             style={{
@@ -34,7 +33,7 @@ export default function ContactView() {
             aria-hidden
           />
 
-          {/* Desktop overlay copy */}
+          {/* Desktop overlay */}
           <div className="pointer-events-none absolute inset-0 z-[2] hidden lg:flex">
             <div className="mx-auto flex h-full w-full max-w-[1500px] flex-col justify-end px-10 pb-16 pt-[calc(5.5rem+3rem)]">
               <div className="pointer-events-none max-w-xl">
@@ -97,9 +96,9 @@ export default function ContactView() {
           </div>
         </div>
 
-        {/* Phone copy below map — never clipped */}
+        {/* Phone copy */}
         <div
-          className="px-5 py-10 sm:px-8 sm:py-12 lg:hidden"
+          className="px-5 py-7 sm:px-8 sm:py-10 lg:hidden"
           style={{ backgroundColor: GREEN }}
         >
           <div className="flex items-center gap-3">
@@ -113,7 +112,7 @@ export default function ContactView() {
           </div>
 
           <h1
-            className="mt-3 text-[clamp(1.85rem,7vw,2.5rem)] font-medium leading-[1.08] tracking-[-0.03em] text-white"
+            className="mt-2.5 text-[clamp(1.55rem,6.5vw,2.25rem)] font-medium leading-[1.08] tracking-[-0.03em] text-white"
             style={{ fontFamily: "var(--imp-display)" }}
           >
             {before}
@@ -121,30 +120,28 @@ export default function ContactView() {
             {after}
           </h1>
 
-          <p className="mt-3 max-w-[34rem] text-[14px] leading-relaxed text-white/75">
+          <p className="mt-2.5 text-[13px] leading-relaxed text-white/75">
             {CONTACT_PAGE.heroBody}
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-5 grid grid-cols-2 gap-2.5">
             <a
               href={CONTACT_PAGE.mapsHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-11 items-center gap-2 rounded-full px-5 text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--imp-ink)]"
+              className="inline-flex h-11 items-center justify-center gap-1.5 rounded-full px-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--imp-ink)]"
               style={{
                 background: `linear-gradient(165deg, #d4b06e, ${GOLD} 48%, #8a6a3a)`,
               }}
             >
-              Open in Maps
-              <span aria-hidden>→</span>
+              Open Maps
             </a>
             <a
               href="#contact-form"
-              className="inline-flex h-11 items-center gap-2 rounded-full border px-5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
+              className="inline-flex h-11 items-center justify-center gap-1.5 rounded-full border px-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-white"
               style={{ borderColor: "rgba(181,148,97,0.75)" }}
             >
-              Send enquiry
-              <span aria-hidden>→</span>
+              Enquire
             </a>
           </div>
         </div>
@@ -153,12 +150,11 @@ export default function ContactView() {
       {/* Details + form */}
       <section
         id="contact-form"
-        className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
+        className="scroll-mt-24 px-5 py-9 sm:px-8 sm:py-16 lg:px-10 lg:py-20"
         style={{ backgroundColor: CREAM }}
         aria-label="Enquiry form"
       >
-        <div className="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[0.92fr_1.15fr] lg:gap-12 xl:gap-16">
-          {/* Left — contact details */}
+        <div className="mx-auto grid max-w-[1500px] gap-6 sm:gap-10 lg:grid-cols-[0.92fr_1.15fr] lg:gap-12 xl:gap-16">
           <div>
             <div className="flex items-center gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] sm:text-[12px]">
@@ -168,14 +164,40 @@ export default function ContactView() {
             </div>
 
             <h2
-              className="mt-3 text-[clamp(1.7rem,3.4vw,2.55rem)] font-medium leading-[1.1] tracking-[-0.03em] text-[#1A1A1A]"
+              className="mt-2.5 text-[clamp(1.45rem,3.4vw,2.55rem)] font-medium leading-[1.1] tracking-[-0.03em] text-[#1A1A1A] sm:mt-3"
               style={{ fontFamily: "var(--imp-display)" }}
             >
               {CONTACT_PAGE.body.split("—")[0].trim()}
               <span className="block sm:inline"> — we&apos;ll call you back.</span>
             </h2>
 
-            <div className="mt-8 space-y-5">
+            {/* Phone: compact contact chips */}
+            <div className="mt-5 grid grid-cols-2 gap-2.5 sm:hidden">
+              <a
+                href={`tel:${IMPERIUM.phones[0].replace(/\s/g, "")}`}
+                className="flex min-h-11 items-center justify-center rounded-full bg-white px-3 text-[12px] font-semibold text-[#1A1A1A] ring-1 ring-black/[0.06]"
+              >
+                Call
+              </a>
+              <a
+                href={IMPERIUM.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-11 items-center justify-center rounded-full px-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-white"
+                style={{ backgroundColor: GREEN }}
+              >
+                WhatsApp
+              </a>
+              <a
+                href={`mailto:${IMPERIUM.email}`}
+                className="col-span-2 flex min-h-11 items-center justify-center break-all rounded-full bg-white px-3 text-[12px] font-medium text-[#1A1A1A] ring-1 ring-black/[0.06]"
+              >
+                {IMPERIUM.email}
+              </a>
+            </div>
+
+            {/* Desktop contact details */}
+            <div className="mt-8 hidden space-y-5 sm:block">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: GOLD }}>
                   Email
@@ -187,7 +209,6 @@ export default function ContactView() {
                   {IMPERIUM.email}
                 </a>
               </div>
-
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: GOLD }}>
                   Phone
@@ -206,7 +227,7 @@ export default function ContactView() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 hidden flex-wrap gap-3 sm:mt-8 sm:flex">
               <a
                 href={IMPERIUM.whatsapp}
                 target="_blank"
@@ -229,22 +250,22 @@ export default function ContactView() {
               </a>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.25rem] bg-white p-5 shadow-[0_14px_36px_-24px_rgba(10,42,34,0.35)] ring-1 ring-black/[0.04]">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: GOLD }}>
-                  Corporate office
+            <div className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-10 sm:gap-4">
+              <div className="rounded-[1rem] bg-white p-3.5 shadow-[0_14px_36px_-24px_rgba(10,42,34,0.35)] ring-1 ring-black/[0.04] sm:rounded-[1.25rem] sm:p-5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] sm:text-[11px]" style={{ color: GOLD }}>
+                  Corporate
                 </p>
-                <div className="mt-3 space-y-1 text-[14px] leading-relaxed text-[#3f3f3f]">
+                <div className="mt-2 space-y-0.5 text-[11px] leading-snug text-[#3f3f3f] sm:mt-3 sm:space-y-1 sm:text-[14px] sm:leading-relaxed">
                   {IMPERIUM.corporateAddress.map((line) => (
                     <p key={line}>{line}</p>
                   ))}
                 </div>
               </div>
-              <div className="rounded-[1.25rem] bg-white p-5 shadow-[0_14px_36px_-24px_rgba(10,42,34,0.35)] ring-1 ring-black/[0.04]">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: GOLD }}>
+              <div className="rounded-[1rem] bg-white p-3.5 shadow-[0_14px_36px_-24px_rgba(10,42,34,0.35)] ring-1 ring-black/[0.04] sm:rounded-[1.25rem] sm:p-5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] sm:text-[11px]" style={{ color: GOLD }}>
                   Project site
                 </p>
-                <div className="mt-3 space-y-1 text-[14px] leading-relaxed text-[#3f3f3f]">
+                <div className="mt-2 space-y-0.5 text-[11px] leading-snug text-[#3f3f3f] sm:mt-3 sm:space-y-1 sm:text-[14px] sm:leading-relaxed">
                   {IMPERIUM.siteAddress.map((line) => (
                     <p key={line}>{line}</p>
                   ))}
@@ -253,10 +274,9 @@ export default function ContactView() {
             </div>
           </div>
 
-          {/* Right — form card */}
           <div
             id="enquiry"
-            className="rounded-[1.5rem] bg-white p-5 shadow-[0_28px_60px_-30px_rgba(10,42,34,0.4)] ring-1 ring-black/[0.04] sm:rounded-[1.75rem] sm:p-7 lg:p-8"
+            className="rounded-[1.15rem] bg-white p-4 shadow-[0_22px_50px_-28px_rgba(10,42,34,0.4)] ring-1 ring-black/[0.04] sm:rounded-[1.75rem] sm:p-7 lg:p-8"
           >
             <div className="flex items-center gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ color: GOLD }}>
@@ -264,68 +284,52 @@ export default function ContactView() {
               </p>
               <span className="h-px w-10" style={{ backgroundColor: GOLD }} />
             </div>
-            <p className="mt-3 text-[14px] leading-relaxed text-[#3f3f3f] sm:text-[15px]">
+            <p className="mt-2 text-[13px] leading-relaxed text-[#3f3f3f] sm:mt-3 sm:text-[15px]">
               {CONTACT_PAGE.formBody}
             </p>
-            <div className="mt-6">
+            <div className="mt-4 sm:mt-6">
               <ContactForm />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Soft bottom band */}
+      {/* Bottom band */}
       <section
-        className="relative overflow-hidden px-5 py-12 sm:px-8 sm:py-14 lg:px-10"
+        className="relative overflow-hidden px-5 py-9 sm:px-8 sm:py-14 lg:px-10"
         style={{ backgroundColor: GREEN }}
         aria-label="Visit prompt"
       >
-        <svg
-          className="pointer-events-none absolute inset-x-0 top-0 h-8 w-full opacity-40"
-          viewBox="0 0 1440 40"
-          preserveAspectRatio="none"
-          aria-hidden
-        >
-          <path
-            d="M0 24 C260 6 480 34 720 18 C980 2 1200 28 1440 12"
-            fill="none"
-            stroke={GOLD}
-            strokeWidth="1.1"
-          />
-        </svg>
-
-        <div className="relative z-[1] mx-auto flex max-w-[1500px] flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="relative z-[1] mx-auto flex max-w-[1500px] flex-col gap-5 sm:gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
             <h2
-              className="text-[clamp(1.5rem,3vw,2.2rem)] font-medium leading-[1.12] tracking-[-0.03em] text-white"
+              className="text-[clamp(1.35rem,3vw,2.2rem)] font-medium leading-[1.12] tracking-[-0.03em] text-white"
               style={{ fontFamily: "var(--imp-display)" }}
             >
               Prefer to visit in person?
             </h2>
-            <p className="mt-2 text-[14px] leading-relaxed text-white/70">
+            <p className="mt-2 text-[13px] leading-relaxed text-white/70 sm:text-[14px]">
               Open the map for Lilasons Developers, or call ahead and we&apos;ll guide you in.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap sm:gap-3">
             <a
               href={CONTACT_PAGE.mapsHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-11 items-center gap-2 rounded-full px-6 text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--imp-ink)] transition hover:brightness-105"
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--imp-ink)] transition hover:brightness-105 sm:px-6 sm:text-[12px]"
               style={{
                 background: `linear-gradient(165deg, #d4b06e, ${GOLD} 48%, #8a6a3a)`,
               }}
             >
               Open map
-              <span aria-hidden>→</span>
             </a>
             <Link
               href="/location"
-              className="inline-flex h-11 items-center gap-2 rounded-full border px-6 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-white/5"
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full border px-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white/5 sm:px-6 sm:text-[12px]"
               style={{ borderColor: "rgba(181,148,97,0.65)" }}
             >
-              Project location
-              <span aria-hidden>→</span>
+              Location
             </Link>
           </div>
         </div>
