@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ImperiumPlansPage() {
   return (
-    <div className="pt-[4.75rem] sm:pt-[5.5rem] lg:pt-[6rem]">
+    <div className="pt-[5.25rem] sm:pt-[6rem] lg:pt-[6.5rem]">
       <FloorPlans />
     </div>
   );

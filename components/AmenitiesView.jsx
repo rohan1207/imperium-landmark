@@ -77,7 +77,7 @@ export default function AmenitiesView() {
     <div style={{ backgroundColor: CREAM }}>
       {/* Hero — matches mockup: cream copy + wave-masked lobby */}
       <section
-        className="relative overflow-hidden pt-[calc(4.75rem+0.5rem)] sm:pt-[calc(5.5rem+0.75rem)] lg:pt-[calc(6rem+0.5rem)]"
+        className="relative overflow-hidden pt-[calc(5.25rem+0.5rem)] sm:pt-[calc(6rem+0.75rem)] lg:pt-[calc(6.5rem+0.5rem)]"
         aria-label="Amenities & Specs"
         style={{ backgroundColor: CREAM }}
       >

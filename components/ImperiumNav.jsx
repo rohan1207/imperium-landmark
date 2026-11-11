@@ -22,17 +22,17 @@ export default function ImperiumNav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/[0.06] bg-white">
-      <nav className="mx-auto flex h-[4.75rem] max-w-[1500px] items-center justify-between gap-3 px-5 sm:h-[5.5rem] sm:gap-5 sm:px-6 lg:h-[6rem] lg:px-8 xl:px-10">
+      <nav className="mx-auto flex h-[5.25rem] max-w-[1500px] items-center justify-between gap-3 px-5 sm:h-[6rem] sm:gap-5 sm:px-6 lg:h-[6.5rem] lg:px-8 xl:px-10">
         <Link
           href="/"
-          className="group flex min-w-0 shrink-0 items-center gap-3 sm:gap-3.5"
+          className="group flex min-w-0 shrink-0 items-center gap-3 sm:gap-4"
           aria-label={`${IMPERIUM.name} home`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/imperium-logo-dark.png?v=1"
             alt={IMPERIUM.name}
-            className="h-[3.65rem] w-auto object-contain object-left transition group-hover:opacity-90 sm:h-[4.25rem] lg:h-[4.75rem]"
+            className="h-[4.15rem] w-auto object-contain object-left transition group-hover:opacity-90 sm:h-[4.85rem] lg:h-[5.35rem]"
             draggable={false}
           />
           <span className="hidden min-w-0 flex-col sm:flex">
@@ -43,7 +43,7 @@ export default function ImperiumNav() {
             <img
               src="/lilasons-logo.png"
               alt={IMPERIUM.developer}
-              className="mt-1 h-9 w-auto object-contain object-left opacity-90 sm:h-10 lg:h-11"
+              className="mt-1 h-10 w-auto object-contain object-left opacity-90 sm:h-11 lg:h-12"
               draggable={false}
             />
           </span>

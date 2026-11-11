@@ -69,7 +69,7 @@ export default function LocationView() {
     <div style={{ backgroundColor: CREAM }}>
       {/* Hero — copy + map */}
       <section
-        className="relative overflow-hidden pt-[calc(4.75rem+0.75rem)] sm:pt-[calc(5.5rem+1rem)] lg:pt-[calc(6rem+0.75rem)]"
+        className="relative overflow-hidden pt-[calc(5.25rem+0.75rem)] sm:pt-[calc(6rem+1rem)] lg:pt-[calc(6.5rem+0.75rem)]"
         aria-label="Location"
         style={{ backgroundColor: CREAM }}
       >
